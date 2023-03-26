@@ -11,5 +11,6 @@
 		</property>
    </bean>
    
+   <bean id="calc" class="spring.core.bean.Calc" />
        
 </beans>
