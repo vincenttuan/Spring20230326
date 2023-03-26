@@ -16,6 +16,9 @@ public class Test {
 		HelloBean helloBean1 = (HelloBean)ctx.getBean("helloBean1");
 		helloBean1.setName("Mary");
 		System.out.println(helloBean1.getName());
+		
+		HelloBean helloBean1_1 = (HelloBean)ctx.getBean("helloBean1");
+		System.out.println(helloBean1_1.getName());
 	}
 
 }
