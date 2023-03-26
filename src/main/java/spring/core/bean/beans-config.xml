@@ -5,6 +5,11 @@
        
    <bean id="helloBean1" class="spring.core.bean.HelloBean" />
    
+   <bean id="helloBean2" class="spring.core.bean.HelloBean">
+		<property name="name">
+			<value>John</value>
+		</property>
+   </bean>
    
        
 </beans>

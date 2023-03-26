@@ -23,6 +23,15 @@ public class Test {
 		HelloBean helloBean1_1 = (HelloBean)ctx.getBean("helloBean1");
 		System.out.println(helloBean1_1.getName());
 		System.out.println(helloBean1_1);
+		
+		// 使用此方法,必須於配置檔中針對 HelloBean 只有一個設定
+		//HelloBean helloBean1_2 = ctx.getBean(HelloBean.class);
+		//System.out.println(helloBean1_2.getName());
+		//System.out.println(helloBean1_2);
+		
+		HelloBean helloBean2 = (HelloBean)ctx.getBean("helloBean2");
+		System.out.println(helloBean2.getName());
+		
 	}
 
 }
