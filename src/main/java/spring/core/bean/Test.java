@@ -10,6 +10,7 @@ public class Test {
 		HelloBean helloBean = new HelloBean();
 		helloBean.setName("Spring");
 		System.out.println(helloBean.getName());
+		System.out.println(helloBean);
 		// 使用 Spring IOC 反轉控制技術
 		// 1. 找到配置檔
 		ApplicationContext ctx = new FileSystemXmlApplicationContext("src/main/java/spring/core/bean/beans-config.xml");
@@ -17,9 +18,11 @@ public class Test {
 		HelloBean helloBean1 = (HelloBean)ctx.getBean("helloBean1");
 		helloBean1.setName("Mary");
 		System.out.println(helloBean1.getName());
+		System.out.println(helloBean1);
 		
 		HelloBean helloBean1_1 = (HelloBean)ctx.getBean("helloBean1");
 		System.out.println(helloBean1_1.getName());
+		System.out.println(helloBean1_1);
 	}
 
 }
