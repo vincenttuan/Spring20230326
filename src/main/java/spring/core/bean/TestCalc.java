@@ -10,8 +10,11 @@ public class TestCalc {
 		//Calc calc = ctx.getBean(Calc.class);
 		Calc calc = ctx.getBean("calc", Calc.class);
 		calc.add(10, 20);
-		
 		System.out.println(calc.getResult());
+		
+		Calc calc2 = ctx.getBean("calc", Calc.class);
+		calc2.add(30, 40);
+		System.out.println(calc2.getResult());
 
 	}
 
