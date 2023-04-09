@@ -3,15 +3,15 @@ package spring.core.session02.bean;
 public class Paper {
 	private Integer id; // 紙張編號
 	private Color color; // 紙張顏色
-	private Size size; // 紙張尺寸
+	private Size a4; // 紙張尺寸
 	
 	public Paper() {
 		
 	}
 
-	public Paper(Color color, Size size) {
+	public Paper(Color color, Size a4) {
 		this.color = color;
-		this.size = size;
+		this.a4 = a4;
 	}
 
 	public Integer getId() {
@@ -30,17 +30,17 @@ public class Paper {
 		this.color = color;
 	}
 
-	public Size getSize() {
-		return size;
+	public Size getA4() {
+		return a4;
 	}
 
-	public void setSize(Size size) {
-		this.size = size;
+	public void setA4(Size a4) {
+		this.a4 = a4;
 	}
 
 	@Override
 	public String toString() {
-		return "Paper [id=" + id + ", color=" + color + ", size=" + size + "]";
+		return "Paper [id=" + id + ", color=" + color + ", size=" + a4 + "]";
 	}
 	
 	
