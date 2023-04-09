@@ -3,9 +3,9 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
        
-   <bean id="helloBean1" class="spring.core.bean.HelloBean" />
+   <bean id="helloBean1" class="spring.core.session01.bean.HelloBean" />
    
-   <bean id="helloBean2" class="spring.core.bean.HelloBean">
+   <bean id="helloBean2" class="spring.core.session01.bean.HelloBean">
 		<property name="name">
 			<value>John</value>
 		</property>
@@ -13,6 +13,6 @@
    
    <!-- scope="prototype" 可以動態建構出多個實體 -->
    <!-- scope="singleton" 只有一個實體(預設) -->
-   <bean id="calc" scope="prototype" class="spring.core.bean.Calc" />
+   <bean id="calc" scope="prototype" class="spring.core.session01.bean.Calc" />
        
 </beans>

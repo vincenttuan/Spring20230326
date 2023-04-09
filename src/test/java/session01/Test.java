@@ -1,6 +1,7 @@
 package session01;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import spring.core.session01.bean.HelloBean;
@@ -15,7 +16,9 @@ public class Test {
 		System.out.println(helloBean);
 		// 使用 Spring IOC 反轉控制技術
 		// 1. 找到配置檔
-		ApplicationContext ctx = new FileSystemXmlApplicationContext("src/main/java/spring/core/bean/beans-config.xml");
+		//ApplicationContext ctx = new FileSystemXmlApplicationContext("src/main/java/spring/core/bean/beans-config.xml");
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("beans-config.xml");
+		System.out.println(ctx);
 		// 2. 取得物件
 		HelloBean helloBean1 = (HelloBean)ctx.getBean("helloBean1");
 		helloBean1.setName("Mary");
