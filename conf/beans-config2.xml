@@ -56,8 +56,23 @@
    		<property name="author" ref="author2" />
    </bean>
    
+   <bean id="book3" class="spring.core.session02.bean.Book">
+   		<!-- 建構子注入 -->
+   		<constructor-arg index="0" value="Spring" />
+   		<constructor-arg index="1" value="600" />
+   		<!-- 建構子參考注入 -->
+   		<constructor-arg index="2" ref="author3" />
+   </bean>
    
+   <!-- 簡化版 p 方法(參考)注入 -->
+   <bean id="book4" 
+   		 p:name="Python" p:price="400" p:author-ref="author4"
+   		 class="spring.core.session02.bean.Book" />
    
+   <!-- 簡化版 c 建構子(參考)注入 -->
+   <bean id="book5" 
+   		 c:name="VB" c:price="200" c:author-ref="author5"
+   		 class="spring.core.session02.bean.Book" />
 </beans>
 
 
