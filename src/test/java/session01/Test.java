@@ -1,7 +1,9 @@
-package spring.core.bean;
+package session01;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
+
+import spring.core.session01.bean.HelloBean;
 
 public class Test {
 

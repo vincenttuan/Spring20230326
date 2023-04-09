@@ -1,4 +1,4 @@
-package spring.core.bean;
+package spring.core.session01.bean;
 
 public class Calc {
 	
