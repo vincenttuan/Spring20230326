@@ -79,7 +79,7 @@
    <bean id="a4" p:name="A4" class="spring.core.session02.bean.Size" />
    
    <!-- byType 自動匹配 -->
-   <bean id="paper1" p:id="1" autowire="byType" />
+   <bean id="paper1" p:id="1" autowire="byType" class="spring.core.session02.bean.Paper" />
    
 </beans>
 
