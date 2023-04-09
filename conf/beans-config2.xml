@@ -41,6 +41,10 @@
    		 c:name="Tom" c:sex="男" c:age="30"
    		 class="spring.core.session02.bean.Author" />
    
+   <!-- Book -->
+   <bean id="book1" class="spring.core.session02.bean.Book" />
+   
+   
 </beans>
 
 
