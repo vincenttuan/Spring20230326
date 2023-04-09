@@ -18,10 +18,10 @@ public class AuthorTest {
 		author1.setAge(24);
 		System.out.println("author1: " + author1); 
 		
-		Author author2 = ctx.getBean("author2", Author.class);
+		Author author2 = ctx.getBean("author2", Author.class); // 資料已透過設定檔的方法注入配置
 		System.out.println("author2: " + author2); 
 		
-		Author author3 = ctx.getBean("author3", Author.class);
+		Author author3 = ctx.getBean("author3", Author.class); // 資料已透過設定檔的建構子注入配置
 		System.out.println("author3: " + author3); 
 		
 
