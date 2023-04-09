@@ -44,6 +44,19 @@
    <!-- Book -->
    <bean id="book1" class="spring.core.session02.bean.Book" />
    
+   <bean id="book2" class="spring.core.session02.bean.Book">
+   		<!-- 方法注入 -->
+   		<property name="name">
+   			<value>JavaScript</value>
+   		</property>
+   		<property name="price">
+   			<value>300</value>
+   		</property>
+   		<!-- 方法參考注入 -->
+   		<property name="author" ref="author2" />
+   </bean>
+   
+   
    
 </beans>
 
