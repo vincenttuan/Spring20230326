@@ -13,6 +13,6 @@ public class Size {
 
 	@Override
 	public String toString() {
-		return "Color [name=" + name + "]";
+		return "Size [name=" + name + "]";
 	}
 }
