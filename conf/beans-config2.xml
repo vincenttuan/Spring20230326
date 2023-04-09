@@ -73,6 +73,14 @@
    <bean id="book5" 
    		 c:name="VB" c:price="200" c:author-ref="author5"
    		 class="spring.core.session02.bean.Book" />
+   		 
+   <!-- 自動綁定 autowire -->
+   <bean id="white" p:name="White" class="spring.core.session02.bean.Color" />
+   <bean id="a4" p:name="A4" class="spring.core.session02.bean.Size" />
+   
+   <!-- byType 自動匹配 -->
+   <bean id="paper1" p:id="1" autowire="byType" />
+   
 </beans>
 
 
