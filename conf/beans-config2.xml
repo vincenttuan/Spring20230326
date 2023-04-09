@@ -75,18 +75,23 @@
    		 class="spring.core.session02.bean.Book" />
    		 
    <!-- 自動綁定 autowire -->
-   <bean id="white" p:name="White" class="spring.core.session02.bean.Color" />
-   <bean id="red" p:name="Red" class="spring.core.session02.bean.Color" />
-   <bean id="color" p:name="Blue" class="spring.core.session02.bean.Color" />
-   <bean id="a4" p:name="A4" class="spring.core.session02.bean.Size" />
-   <bean id="b5" p:name="B5" class="spring.core.session02.bean.Size" />
+   	<bean id="white" p:name="White" class="spring.core.session02.bean.Color" />
+   	<bean id="red" p:name="Red" class="spring.core.session02.bean.Color" />
+   	<bean id="color" p:name="Blue" class="spring.core.session02.bean.Color" />
+   	<bean id="a4" p:name="A4" class="spring.core.session02.bean.Size" />
+   	<bean id="b5" p:name="B5" class="spring.core.session02.bean.Size" />
    
-   <!-- byType 自動匹配 -->
-   <!-- 若可匹配的超過一個就不可使用 byType -->
-   <!--
-   <bean id="paper1" p:id="1" autowire="byType" class="spring.core.session02.bean.Paper" />
-   -->
-   <bean id="paper2" p:id="2" autowire="byName" class="spring.core.session02.bean.Paper" />
+   	<!-- byType 自動匹配 -->
+  	 <!-- 若可匹配的超過一個就不可使用 byType -->
+   	<!--
+   	<bean id="paper1" p:id="1" autowire="byType" class="spring.core.session02.bean.Paper" />
+   	-->
+   	<!-- byName 自動匹配 -->
+   	<bean id="paper2" p:id="2" autowire="byName" class="spring.core.session02.bean.Paper" />
+	
+   	<!-- constructor 自動匹配 -->
+	<bean id="paper3" p:id="3" autowire="constructor" class="spring.core.session02.bean.Paper" />
+	
 </beans>
 
 

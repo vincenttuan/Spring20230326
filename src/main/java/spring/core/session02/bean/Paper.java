@@ -9,9 +9,9 @@ public class Paper {
 		
 	}
 
-	public Paper(Color color, Size a4) {
+	public Paper(Color color, Size b5) {
 		this.color = color;
-		this.a4 = a4;
+		this.a4 = b5;
 	}
 
 	public Integer getId() {

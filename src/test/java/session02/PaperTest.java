@@ -13,5 +13,8 @@ public class PaperTest {
 		
 		Paper paper2 = ctx.getBean("paper2", Paper.class);
 		System.out.println(paper2);
+		
+		Paper paper3 = ctx.getBean("paper3", Paper.class);
+		System.out.println(paper3);
 	}
 }
