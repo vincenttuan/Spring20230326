@@ -18,7 +18,6 @@ public class Test {
 		// 1. 找到配置檔
 		//ApplicationContext ctx = new FileSystemXmlApplicationContext("src/main/java/spring/core/bean/beans-config.xml");
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("beans-config.xml");
-		System.out.println(ctx);
 		// 2. 取得物件
 		HelloBean helloBean1 = (HelloBean)ctx.getBean("helloBean1");
 		helloBean1.setName("Mary");
