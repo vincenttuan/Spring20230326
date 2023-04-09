@@ -24,7 +24,12 @@ public class AuthorTest {
 		Author author3 = ctx.getBean("author3", Author.class); // 資料已透過設定檔的建構子注入配置
 		System.out.println("author3: " + author3); 
 		
-
+		Author author4 = ctx.getBean("author4", Author.class); // 資料已透過 p 簡化方法注入配置
+		System.out.println("author4: " + author4); 
+		
+		Author author5 = ctx.getBean("author5", Author.class); // 資料已透過 p 簡化建構子注入配置
+		System.out.println("author5: " + author5); 
+		
 	}
 
 }
