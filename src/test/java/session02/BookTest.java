@@ -22,6 +22,18 @@ public class BookTest {
 		book1.setPrice(500);
 		book1.setAuthor(author1);
 		System.out.println("book1: " + book1);
+		
+		Book book2 = ctx.getBean("book2", Book.class);
+		System.out.println("book2: " + book2);
+		
+		Book book3 = ctx.getBean("book3", Book.class);
+		System.out.println("book3: " + book3);
+		
+		Book book4 = ctx.getBean("book4", Book.class);
+		System.out.println("book4: " + book4);
+		
+		Book book5 = ctx.getBean("book5", Book.class);
+		System.out.println("book5: " + book5);
 	}
 
 }
