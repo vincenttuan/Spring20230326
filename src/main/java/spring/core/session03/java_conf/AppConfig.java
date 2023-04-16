@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import javax.swing.text.TabableView;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -101,9 +103,41 @@ public class AppConfig {
 		
 	}
 	
-	
 	// 集合 Set、List、Map 配置
+	@Bean
+	public Set<Student> students() {
+		Set<Student> students = new HashSet<>();
+		students.add(student1());
+		students.add(student2());
+		return students;
+	}
+	
+	@Bean
+	public List<String> subjects() {
+		List<String> subjects = new ArrayList<>();
+		subjects.add("Program");
+		subjects.add("Music");
+		subjects.add("English");
+		subjects.add("Math");
+		return subjects;
+	}
+	
+	@Bean
+	public Map<String, Integer> salary() {
+		Map<String, Integer> salary = new HashMap<>();
+		salary.put("base", 65000);
+		salary.put("addition", 18000);
+		return salary;
+	}
 	
 	// 講師 2 配置
+	@Bean
+	public Teacher teacher2() {
+		Teacher teacher = new Teacher(2, "Jean");
+		teacher.setStudents(students());
+		teacher.setSubjects(subjects());
+		teacher.setSalary(salary());
+		return teacher;
+	}
 	
 }

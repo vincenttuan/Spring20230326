@@ -26,6 +26,8 @@ public class ClazzTest2 {
 		
 		Teacher teacher1 = ctx.getBean("teacher1", Teacher.class);
 		System.out.println(teacher1);
+		Teacher teacher2 = ctx.getBean("teacher2", Teacher.class);
+		System.out.println(teacher2);
 	}
 
 }
