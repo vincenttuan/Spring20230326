@@ -15,6 +15,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 import spring.core.session03.bean.Clazz;
+import spring.core.session03.bean.DBConn;
 import spring.core.session03.bean.Student;
 import spring.core.session03.bean.Teacher;
 
@@ -138,6 +139,11 @@ public class AppConfig {
 		teacher.setSubjects(subjects());
 		teacher.setSalary(salary());
 		return teacher;
+	}
+	
+	@Bean(initMethod = "init", destroyMethod = "destroy")
+	public DBConn dbConn() {
+		return new DBConn();
 	}
 	
 }
