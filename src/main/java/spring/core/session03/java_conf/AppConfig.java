@@ -48,6 +48,7 @@ public class AppConfig {
 		return clazz;
 	}
 	
+	// 學生 1 配置
 	@Bean
 	public Student student1() {
 		Set<Clazz> clazzs = new HashSet<>();
@@ -61,6 +62,7 @@ public class AppConfig {
         return student;
 	}
 	
+	// 學生 2 配置
 	@Bean
     public Student student2() {
         Set<Clazz> clazzs = new HashSet<>();
@@ -70,5 +72,11 @@ public class AppConfig {
         student.setClazzs(clazzs);
         return student;
     }
+	
+	// 講師 1 配置
+	
+	// 集合 Set、List、Map 配置
+	
+	// 講師 2 配置
 	
 }
