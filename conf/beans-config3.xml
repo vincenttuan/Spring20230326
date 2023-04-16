@@ -10,6 +10,13 @@
 	<!-- 引用外部資源 -->
 	<context:property-placeholder location="data.properties" />  	
    	
+   	<!-- 建立 Clazz 並使用外部資料注入 -->
+   	<bean id="clazz1"
+   		  p:id="1"
+   		  p:name="${clazz.name}"
+   		  p:credit="${class.credit}"
+   	 	  class="spring.core.session03.bean.Clazz" />
+   	
 </beans>
 
 
