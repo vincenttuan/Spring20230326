@@ -116,6 +116,9 @@
    		  init-method="init"
    		  destroy-method="destroy"
    		  class="spring.core.session03.bean.DBConn" />
+   		  
+	<!-- 不建立 Car 而是建立 CarFactory -->
+	<bean id="carFactory" class="spring.core.session03.factory.CarFactory" />
 </beans>
 
 
