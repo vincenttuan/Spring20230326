@@ -42,6 +42,36 @@
    			</set>
    		</property>
    	</bean>
+   	
+   	<!-- 講師 1 配置 -->
+   	<bean id="teacher1" p:id="1" p:name="Bob" class="spring.core.session03.bean.Teacher">
+   		<!-- Set 配置 -->
+   		<property name="students">
+   			<set>
+   				<ref bean="student1" />
+   				<ref bean="student2" />
+   			</set>
+   		</property>
+   		<!-- List 配置 -->
+   		<property name="subjects">
+   			<list>
+   				<value>Program</value>
+   				<value>English</value>
+   			</list>
+   		</property>
+   		<!-- Map 配置(Map 裡面每一個元素是一個 entry, 每一個 entry 包含 key/value) -->
+   		<property name="salary">
+   			<map>
+   				<entry key="base">
+   					<value>50000</value>
+   				</entry>
+   				<entry key="addition">
+   					<value>20000</value>
+   				</entry>
+   			</map>
+   		</property>
+   	</bean>
+   	
 </beans>
 
 
