@@ -1,6 +1,10 @@
 package spring.core.session03.java_conf;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -10,6 +14,7 @@ import org.springframework.context.annotation.PropertySource;
 
 import spring.core.session03.bean.Clazz;
 import spring.core.session03.bean.Student;
+import spring.core.session03.bean.Teacher;
 
 @Configuration
 @PropertySource("classpath:data.properties")
@@ -74,6 +79,28 @@ public class AppConfig {
     }
 	
 	// 講師 1 配置
+	@Bean
+	public Teacher teacher1() {
+		Set<Student> students = new HashSet<>();
+		students.add(student1());
+		students.add(student2());
+		
+		List<String> subjects = new ArrayList<>();
+		subjects.add("Program");
+		subjects.add("English");
+		
+		Map<String, Integer> salary = new HashMap<>();
+		salary.put("base", 50000);
+		salary.put("addition", 20000);
+		
+		Teacher teacher = new Teacher(1, "Bob");
+		teacher.setStudents(students);
+		teacher.setSubjects(subjects);
+		teacher.setSalary(salary);
+		return teacher;
+		
+	}
+	
 	
 	// 集合 Set、List、Map 配置
 	
