@@ -104,8 +104,8 @@
    	
    	<!-- 講師 2 配置 -->
    	<bean id="teacher2" 
-   		  p:id="1" 
-   		  p:name="Bob" 
+   		  p:id="2" 
+   		  p:name="Jean" 
    		  p:students-ref="students"
    		  p:subjects-ref="subjects"
    		  p:salary-ref="salary"
