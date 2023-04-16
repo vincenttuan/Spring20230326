@@ -17,6 +17,31 @@
    		  p:credit="${clazz.credit}"
    	 	  class="spring.core.session03.bean.Clazz" />
    	
+   	<bean id="clazz2" p:id="2" p:name="English" p:credit="2" class="spring.core.session03.bean.Clazz" />
+   	<bean id="clazz3" p:id="3" p:name="Math" p:credit="1" class="spring.core.session03.bean.Clazz" />
+   	
+   	<!-- 學生 1 配置 -->
+   	<bean id="student1" p:id="1" p:name="John" class="spring.core.session03.bean.Student">
+   		<!-- 配置 Set 集合 -->
+   		<property name="clazzs">
+   			<set>
+   				<ref bean="clazz1" />
+   				<ref bean="clazz2" />
+   				<ref bean="clazz3" />
+   			</set>
+   		</property>
+   	</bean>
+   	
+   	<!-- 學生 2 配置 -->
+   	<bean id="student2" p:id="2" p:name="Mary" class="spring.core.session03.bean.Student">
+   		<!-- 配置 Set 集合 -->
+   		<property name="clazzs">
+   			<set>
+   				<ref bean="clazz1" />
+   				<ref bean="clazz3" />
+   			</set>
+   		</property>
+   	</bean>
 </beans>
 
 
