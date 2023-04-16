@@ -111,6 +111,11 @@
    		  p:salary-ref="salary"
    		  class="spring.core.session03.bean.Teacher" />
    	
+   	<!-- init-method、destroy-method 配置 -->
+   	<bean id="dbConn"
+   		  init-method="init"
+   		  destroy-method="destroy"
+   		  class="spring.core.session03.bean.DBConn" />
 </beans>
 
 
