@@ -14,7 +14,7 @@
    	<bean id="clazz1"
    		  p:id="1"
    		  p:name="${clazz.name}"
-   		  p:credit="${class.credit}"
+   		  p:credit="${clazz.credit}"
    	 	  class="spring.core.session03.bean.Clazz" />
    	
 </beans>
