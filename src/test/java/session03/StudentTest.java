@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import spring.core.session03.bean.Clazz;
 import spring.core.session03.bean.Student;
 
 public class StudentTest {
@@ -17,6 +18,12 @@ public class StudentTest {
 		// 例如：
 		// John: 6
 		// Mary: 4
+		students.forEach(student -> {
+			String name = student.getName();
+			int total = student.getClazzs().stream().mapToInt(Clazz::getCredit).sum();
+			System.out.printf("%s: %d\n", name, total);
+		});
+		
 	}
 
 }
