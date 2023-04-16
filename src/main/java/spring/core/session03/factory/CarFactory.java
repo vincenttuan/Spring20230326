@@ -19,7 +19,8 @@ public class CarFactory implements FactoryBean<Car> {
 	public Class<?> getObjectType() {
 		return Car.class;
 	}
-
+	
+	// 用來設定 Car 實體是否是 single ton
 	@Override
 	public boolean isSingleton() {
 		return true;
