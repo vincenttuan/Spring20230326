@@ -11,6 +11,14 @@ public class Teacher {
 	private List<String> subjects; // 授課列表
 	private Map<String, Integer> salary; // 薪資組合
 	
+	public Teacher() {
+	}
+	
+	public Teacher(Integer id, String name) {
+		this.id = id;
+		this.name = name;
+	}
+	
 	public Integer getId() {
 		return id;
 	}

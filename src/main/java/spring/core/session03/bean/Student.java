@@ -7,6 +7,14 @@ public class Student {
 	private String name; // 學生姓名
 	private Set<Clazz> clazzs;  // 學生選課
 	
+	public Student() {
+	}
+	
+	public Student(Integer id, String name) {
+		this.id = id;
+		this.name = name;
+	}
+	
 	public Integer getId() {
 		return id;
 	}
