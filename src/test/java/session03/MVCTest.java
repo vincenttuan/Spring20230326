@@ -12,6 +12,10 @@ public class MVCTest {
 		//User user = ctx.getBean("student", User.class);
 		User user = ctx.getBean("user", User.class);
 		System.out.println(user);
+		System.out.println(user.getNickname().length);
+		System.out.println(user.getSubjects().size());
+		System.out.println(user.getScores().size());
+		System.out.println(user.getHobbies().size());
 	}
 
 }

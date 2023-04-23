@@ -6,32 +6,40 @@ import java.util.Map;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 //@Component(value = "student")
 @Component // 相當於 @Component(value = "user")
+@PropertySource("classpath:user.properties")
 public class User {
 	
-	@Value(value = "John")
+	//@Value(value = "John")
+	@Value("${user.username}")
 	private String username; // 姓名
 	
-	@Value(value = "22")
+	//@Value(value = "22")
+	@Value("${user.age}")
 	private Integer age; // 年齡
 	
 	// #{..} 這是一個 SpringEL 表達式
 	// ${..} 表示取得屬性值
 	// 「:」 後面代表預設值
 	// ${nickname: {'Baby', 'Lucky'}} 表示若找不到 nickname 的屬性值就使用 {'Baby', 'Lucky'}
-	@Value(value = "#{${nickname: {'Baby', 'Lucky'}}}")
+	//@Value(value = "#{${nickname: {'Baby', 'Lucky'}}}")
+	@Value("${user.nickname}")
 	private String[] nickname; // 暱稱
 	
-	@Value(value = "#{${subjects: {'Java', 'Python'}}}")
+	//@Value(value = "#{${subjects: {'Java', 'Python'}}}")
+	@Value("#{'${user.subjects}'.split(',')}")
 	private Set<String> subjects; // 科目
 	
-	@Value(value = "#{${scores: {100, 90}}}")
+	//@Value(value = "#{${scores: {100, 90}}}")
+	@Value("#{'${user.scores}'.split(',')}")
 	private List<Integer> scores; // 成績
 	
-	@Value(value = "#{${hobbies: {'1':'Program', '2':'BaseBall'}}}")
+	//@Value(value = "#{${hobbies: {'1':'Program', '2':'BaseBall'}}}")
+	@Value("#{${user.hobbies}}")
 	private Map<String, String> hobbies; // 興趣
 
 	public String getUsername() {
