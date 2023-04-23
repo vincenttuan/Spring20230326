@@ -22,6 +22,8 @@ public class DynProxy {
 		// 2. 被代理對象所實作的介面
 		Class<?>[] interfaces = object.getClass().getInterfaces();
 		// 3. 處理代理的實現
+		// InvocationHandler 是一個接口，該接口只有一個方法 invoke()，用於處理代理對象方法的調用。
+		// 當動態代理生成代理類別後，當代理對象的方法被調用時，實際上是通過 InvocationHandler 的 invoke() 方法來執行的。
         InvocationHandler handler = (Object proxy, Method method, Object[] args) -> {
         	Object result = null;
         	
