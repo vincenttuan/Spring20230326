@@ -6,6 +6,8 @@ public class Child implements Person {
 	public void work() {
 		// 業務邏輯
 		System.out.println(getClass().getSimpleName() + "去學校上課");
+		// 假設發生忘了戴口罩的例外
+		throw new RuntimeException("口罩不見了");
 		// ... 其他必要程序 ...
 	}
 
