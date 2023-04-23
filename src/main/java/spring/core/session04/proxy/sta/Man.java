@@ -5,7 +5,7 @@ public class Man implements Person {
 	@Override
 	public void work() {
 		// 業務邏輯
-		System.out.println("上班工作");
+		System.out.println(getClass().getSimpleName() + "上班工作");
 		// ... 其他必要程序 ...
 	}
 	
