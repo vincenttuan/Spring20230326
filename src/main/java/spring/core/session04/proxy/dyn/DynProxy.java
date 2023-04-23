@@ -28,7 +28,7 @@ public class DynProxy {
         	Object result = null;
         	
         	// before: 前置通知-公用方法
-        	System.out.println("before: 前置通知-公用方法");
+        	MyLogger.before();
         	
         	try {
 	        	// 調用被代理物件的-業務方法
@@ -36,10 +36,11 @@ public class DynProxy {
 	        	
         	} catch(Exception e) {
         		// exception: 例外通知-公用方法 
-        		System.out.println("exception: 例外通知-公用方法");
+        		MyLogger.throwing();
+        		
         	} finally {
         		// end: 後置通知-公用方法
-            	System.out.println("end: 後置通知-公用方法");
+        		MyLogger.end();
 			}
         	
         	return result;
