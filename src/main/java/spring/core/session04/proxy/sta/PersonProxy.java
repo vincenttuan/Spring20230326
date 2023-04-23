@@ -13,13 +13,20 @@ public class PersonProxy implements Person {
 	
 	@Override
 	public void work() {
-		// 公用邏輯
+		// before: 公用邏輯
 		System.out.println("出門戴口罩");
 		
 		// 代理執行代理對象的業務方法
-		person.work();
+		try {
+			person.work(); // 可能會有例外，欲統一處理例外
+		} catch (Exception e) {
+			// exception: 公用例外邏輯
+			System.out.println(e);
+			System.out.println("去買口罩");
+			System.out.println("將口罩戴回");
+		}
 		
-		// 公用邏輯
+		// end: 公用邏輯
 		System.out.println("回家脱口罩");
 	}
 
