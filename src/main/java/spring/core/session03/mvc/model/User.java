@@ -7,7 +7,8 @@ import java.util.Set;
 
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component(value = "student")
+@Component // 相當於 @Component(value = "user")
 public class User {
 	
 	private String username; // 姓名
