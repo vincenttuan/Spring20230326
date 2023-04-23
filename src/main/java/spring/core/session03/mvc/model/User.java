@@ -5,22 +5,33 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 //@Component(value = "student")
 @Component // 相當於 @Component(value = "user")
 public class User {
 	
+	@Value(value = "John")
 	private String username; // 姓名
 	
+	@Value(value = "22")
 	private Integer age; // 年齡
 	
+	// #{..} 這是一個 SpringEL 表達式
+	// ${..} 表示取得屬性值
+	// 「:」 後面代表預設值
+	// ${nickname: {'Baby', 'Lucky'}} 表示若找不到 nickname 的屬性值就使用 {'Baby', 'Lucky'}
+	@Value(value = "#{${nickname: {'Baby', 'Lucky'}}}")
 	private String[] nickname; // 暱稱
 	
+	@Value(value = "#{${subjects: {'Java', 'Python'}}}")
 	private Set<String> subjects; // 科目
 	
+	@Value(value = "#{${scores: {100, 90}}}")
 	private List<Integer> scores; // 成績
 	
+	@Value(value = "#{${hobbies: {'1':'Program', '2':'BaseBall'}}}")
 	private Map<String, String> hobbies; // 興趣
 
 	public String getUsername() {
