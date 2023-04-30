@@ -35,8 +35,8 @@ public class Audience {
 		System.out.println("觀眾-離開表演會場");
 	}
 	
-	@AfterThrowing(value = "pt()") 
-	public void exception() { // 發生例外
-		System.out.println("觀眾-加油加油~噓聲...");
+	@AfterThrowing(value = "pt()", throwing = "ex") 
+	public void exception(Throwable ex) { // 發生例外
+		System.out.println("觀眾-加油加油~噓聲..." + ex);
 	}
 }
