@@ -14,7 +14,12 @@ public class AOPTest {
 		System.out.println(calc.add(10, 20));
 		System.out.println(calc.div(30, 15));
 		// 會產生例外的 div
-		System.out.println(calc.div(30, 0));
+		try {
+			System.out.println(calc.div(30, 0));
+		} catch (Exception e) {
+			System.out.println("error: " + e.getMessage());
+		}
+		
 	}
 
 }
