@@ -14,7 +14,6 @@ public class AOPTest2 {
 		System.out.println(computer.add(10, 20));
 		System.out.println(computer.div(30, 15));
 		
-		
 	}
 
 }
