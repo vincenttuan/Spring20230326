@@ -1,4 +1,4 @@
-package session5;
+package session05;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
