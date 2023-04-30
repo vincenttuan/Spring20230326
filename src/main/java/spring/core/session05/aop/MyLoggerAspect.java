@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -40,7 +41,14 @@ public class MyLoggerAspect {
 	
 	// 後製通知 (無論是否有拋出例外都會執行，所以後製通知在Spring-AOP機制上會自動放在 finally 區段中)
 	@After(value = "pt()")
-	public void afterAdvice() {
+	public void afterAdvice() { // 或 afterAdvice(JoinPoint joinPoint)
 		System.out.printf("呼叫後置通知\n");
 	}
+	
+	// 異常通知 (可以設定 throwing 異常通知變數 ex)
+	@AfterThrowing(value = "pt()", throwing = "ex")
+	public void afterThrowingAdvice(Exception ex) { // 方法參數 ex 必須與 throwing = "ex" 內容名稱設定相同
+		System.out.printf("呼叫異常通知 - ex：%s\n", ex);
+	}
+	
 }
