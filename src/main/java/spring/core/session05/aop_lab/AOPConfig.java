@@ -17,4 +17,9 @@ public class AOPConfig {
 		Dancer dancer = new Dancer();
 		return dancer;
 	}
+	
+	@Bean
+	public Audience audience() {
+		return new Audience();
+	}
 }
