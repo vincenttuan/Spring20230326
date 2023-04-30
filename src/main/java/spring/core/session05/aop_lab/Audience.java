@@ -5,7 +5,9 @@ import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.stereotype.Component;
 
+//@Component // 若 AOPConfig 有針對此類設定 @Bean，則此行可以不用配置
 @Aspect // 觀眾：切面程式
 public class Audience {
 	
