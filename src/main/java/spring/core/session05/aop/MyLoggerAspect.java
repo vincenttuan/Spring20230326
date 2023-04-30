@@ -1,5 +1,8 @@
 package spring.core.session05.aop;
 
+import java.util.Arrays;
+
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.core.annotation.Order;
@@ -15,8 +18,10 @@ public class MyLoggerAspect {
 	
 	// 前置通知
 	@Before(value = "execution(public Integer spring.core.session05.aop.CalcImpl.add(Integer, Integer))") // 注入方法簽章
-	public void beforeAdvice() {
-		System.out.printf("呼叫前置通知\n");
+	public void beforeAdvice(JoinPoint joinPoint) { // JoinPoint 連接點
+		String methodName = joinPoint.getSignature().getName(); // 得到連接點的方法名稱
+		Object[] args = joinPoint.getArgs(); // 得到連接點的方法參數內容
+		System.out.printf("呼叫前置通知 - 方法名稱：%s 方法參數：%s\n", methodName, Arrays.toString(args));
 	}
 	
 }
