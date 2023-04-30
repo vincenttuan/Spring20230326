@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -51,6 +52,11 @@ public class MyLoggerAspect {
 		System.out.printf("呼叫異常通知 - ex：%s\n", ex);
 	}
 	
-	
+	// 返回通知 (可以設定 returing 來得到方法的回傳值)
+	// 不過若有異常發生，則返回通知不會執行
+	@AfterReturning(value = "pt()", returning = "result")
+	public void afterReturningAdvice(Object result) { // 返回執行型態統一使用 Object
+		System.out.printf("呼叫返回通知 - result：%s\n", result);
+	}
 	
 }
