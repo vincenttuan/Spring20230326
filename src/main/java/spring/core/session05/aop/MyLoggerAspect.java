@@ -3,6 +3,7 @@ package spring.core.session05.aop;
 import java.util.Arrays;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -29,12 +30,17 @@ public class MyLoggerAspect {
 	//@Before(value = "execution(* spring.core.session05.aop.CalcImpl.*(..))") // 不限權限、回傳值、方法名稱、方法參數
 	//@Before(value = "execution(* spring.core.session05.aop.*.*(..))") // 不限權限、回傳值、類別、方法名稱、方法參數
 	//@Before(value = "execution(* *(..))") // 全部都攔截
-	@Before(value = "pt() && !pt2()") // 切入表達式支援 &&、||、!
-	//@Before(value = "pt()")
+	//@Before(value = "pt() && !pt2()") // 切入表達式支援 &&、||、!
+	@Before(value = "pt()")
 	public void beforeAdvice(JoinPoint joinPoint) { // JoinPoint 連接點
 		String methodName = joinPoint.getSignature().getName(); // 得到連接點的方法名稱
 		Object[] args = joinPoint.getArgs(); // 得到連接點的方法參數內容
 		System.out.printf("呼叫前置通知 - 方法名稱：%s 方法參數：%s\n", methodName, Arrays.toString(args));
 	}
 	
+	// 後製通知 (無論是否有拋出例外都會執行，所以後製通知在Spring-AOP機制上會自動放在 finally 區段中)
+	@After(value = "pt()")
+	public void afterAdvice() {
+		System.out.printf("呼叫後置通知\n");
+	}
 }

@@ -13,8 +13,8 @@ public class AOPTest {
 		Calc calc = ctx.getBean("calcImpl", CalcImpl.class);
 		System.out.println(calc.add(10, 20));
 		System.out.println(calc.div(30, 15));
-		
-
+		// 會產生例外的 div
+		System.out.println(calc.div(30, 0));
 	}
 
 }
