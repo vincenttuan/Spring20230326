@@ -36,6 +36,7 @@ public class MySecurityAspect {
 		} catch (Throwable ex) {
 			// 3. 例外通知
 			System.out.printf("環繞通知(異常通知) - ex：%s\n", ex);
+			//throw new RuntimeException("發生錯誤: " + ex); // 產生一個例外拋給前端~
 		} finally {
 			// 4. 後置通知
 			System.out.printf("環繞通知(後置通知)\n");
