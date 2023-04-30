@@ -1,4 +1,4 @@
-package spring.core.session5.aop;
+package spring.core.session05.aop;
 
 public interface Calc {
 	Integer add(Integer x, Integer y);

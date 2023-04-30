@@ -1,4 +1,4 @@
-package spring.core.session5.aop;
+package spring.core.session05.aop;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.core.annotation.Order;
