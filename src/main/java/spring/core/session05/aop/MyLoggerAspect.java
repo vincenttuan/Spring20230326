@@ -51,4 +51,6 @@ public class MyLoggerAspect {
 		System.out.printf("呼叫異常通知 - ex：%s\n", ex);
 	}
 	
+	
+	
 }
