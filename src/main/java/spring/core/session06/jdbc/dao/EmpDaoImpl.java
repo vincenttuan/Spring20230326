@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -25,8 +26,10 @@ public class EmpDaoImpl implements EmpDao {
 
 	@Override
 	public List<Emp> queryEmps() {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "select eid, ename, age, createtime from emp";
+		// BeanPropertyRowMapper: 自動將資料表的每一筆紀錄的每一個欄位都對應到 Java 物件(Ex: Emp)裡的欄位/屬性/物件變數
+		List<Emp> emps = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Emp.class));
+		return emps;
 	}
 
 	@Override

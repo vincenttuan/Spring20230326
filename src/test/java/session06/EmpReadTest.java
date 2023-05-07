@@ -10,7 +10,7 @@ public class EmpReadTest {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("jdbc-config.xml");
 		EmpDao empDao = ctx.getBean(EmpDao.class);
 		System.out.println(empDao.queryAll());
-		
+		System.out.println(empDao.queryEmps());
 	}
 
 }
