@@ -23,7 +23,7 @@ public class EmpServiceImpl implements EmpService {
 	@Override
 	public Integer getMaxOfAge() {
 		List<Emp> emps = findAllEmps();
-		return emps.stream().mapToInt(Emp::getAge).findAny().getAsInt();
+		return emps.stream().mapToInt(Emp::getAge).max().getAsInt();
 	}
 
 }
