@@ -1,5 +1,7 @@
 package spring.core.session06.jdbc.dao;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -52,7 +54,14 @@ public class EmpDaoImpl implements EmpDao {
 		Integer count = jdbcTemplate.queryForObject(sql, Integer.class);
 		return count;
 	}
-
+	
+	@Override
+	public Double getAvgOfAge() {
+		String sql = "select AVG(age) from emp";
+		Double avgOfAge = jdbcTemplate.queryForObject(sql, Double.class);
+		return avgOfAge;
+	}
+	
 	@Override
 	public int create(String ename, Integer age) {
 		// TODO Auto-generated method stub
