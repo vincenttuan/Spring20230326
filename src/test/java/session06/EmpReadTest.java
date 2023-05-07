@@ -2,9 +2,6 @@ package session06;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import com.mchange.v2.c3p0.ComboPooledDataSource;
-
 import spring.core.session06.jdbc.dao.EmpDao;
 
 public class EmpReadTest {
