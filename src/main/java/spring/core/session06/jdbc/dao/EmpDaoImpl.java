@@ -67,8 +67,13 @@ public class EmpDaoImpl implements EmpDao {
 		String sql = "Insert into emp(ename, age) values(?, ?)";
 		//Object[] args = {ename, age};
 		//int rowcount = jdbcTemplate.update(sql, args);
-		int rowcount = jdbcTemplate.update(sql, ename, age);
-		return 0;
+		int rowcount = 0;
+		try {
+			rowcount = jdbcTemplate.update(sql, ename, age);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return rowcount;
 	}
 
 	@Override
