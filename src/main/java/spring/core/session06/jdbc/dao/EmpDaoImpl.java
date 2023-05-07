@@ -64,7 +64,10 @@ public class EmpDaoImpl implements EmpDao {
 	
 	@Override
 	public int create(String ename, Integer age) {
-		// TODO Auto-generated method stub
+		String sql = "Insert into emp(ename, age) values(?, ?)";
+		//Object[] args = {ename, age};
+		//int rowcount = jdbcTemplate.update(sql, args);
+		int rowcount = jdbcTemplate.update(sql, ename, age);
 		return 0;
 	}
 
