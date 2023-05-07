@@ -7,6 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
@@ -30,6 +31,11 @@ public class JdbcConfig {
         dataSource.setAcquireIncrement(3);
         dataSource.setIdleConnectionTestPeriod(60);
 		return dataSource;
+	}
+	
+	@Bean
+	public JdbcTemplate jdbcTemplate(ComboPooledDataSource dataSource) {
+		return new JdbcTemplate(dataSource);
 	}
 	
 }
