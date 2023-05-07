@@ -23,6 +23,8 @@ public class EmpReadTest {
 			System.out.println("資料不存在");
 		}
 		
+		System.out.println(empDao.count());
+		
 	}
 
 }
