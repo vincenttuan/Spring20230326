@@ -49,7 +49,7 @@ public class BookDaoImpl implements BookDao {
 		// 2. 修改庫存/更新書本庫存(目前庫存量 - 1)
 		String sql = "update stock set book_amount = book_amount - 1 where book_id = ?";
 		int rowcount = jdbcTemplate.update(sql, bookId);
-		return null;
+		return rowcount;
 	}
 	
 	// 客戶目前餘額更新: 客戶目前餘額(balance) - 書本價格(bookPrice)
