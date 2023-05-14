@@ -1,9 +1,11 @@
 package spring.core.session07.tx.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import spring.core.session07.tx.dao.BookDao;
 
+@Service
 public class BookOneServiceImpl implements BookOneService {
 	
 	@Autowired
