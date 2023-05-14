@@ -21,6 +21,7 @@
 	
 	<!-- 元件自動掃瞄「@」配置 -->
 	<context:component-scan base-package="spring.core.session06" />
+	<context:component-scan base-package="spring.core.session07" />
 	
 	<!-- load db.properties -->
 	<context:property-placeholder location="db.properties" />
