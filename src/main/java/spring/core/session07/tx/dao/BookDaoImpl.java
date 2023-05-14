@@ -3,6 +3,8 @@ package spring.core.session07.tx.dao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public class BookDaoImpl implements BookDao {
@@ -10,6 +12,10 @@ public class BookDaoImpl implements BookDao {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
+	@Transactional(
+			propagation = Propagation.REQUIRES_NEW,
+			readOnly = true
+	)
 	@Override
 	public Integer getBookPrice(Integer bookId) {
 		// 取得書本價格
