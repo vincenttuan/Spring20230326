@@ -13,7 +13,9 @@ public class BookManyServiceImpl implements BookManyService {
 	@Autowired
 	private BookOneService bookOneService;
 	
-	@Transactional
+	@Transactional(
+			rollbackFor = {InsufficientStock.class, InsufficientAmount.class}
+	)
 	@Override
 	public void buyMany(String username, Integer... bookIds) throws InsufficientStock, InsufficientAmount {
 		// 利用 for-loop 買多本書

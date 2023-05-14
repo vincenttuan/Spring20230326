@@ -16,7 +16,8 @@ public class BookOneServiceImpl implements BookOneService {
 	private BookDao bookDao;
 	
 	@Transactional( // tx
-			propagation = Propagation.REQUIRED // 預設: 若當前有 tx, 則繼續使用; 若當前沒有 tx 就建立一個 tx
+			propagation = Propagation.REQUIRED, // 預設: 若當前有 tx, 則繼續使用; 若當前沒有 tx 就建立一個 tx
+			rollbackFor = {InsufficientStock.class, InsufficientAmount.class}
 	)
 	@Override
 	public void buyOne(String username, Integer bookId) throws InsufficientStock, InsufficientAmount {
