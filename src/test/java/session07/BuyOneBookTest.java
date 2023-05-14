@@ -11,6 +11,7 @@ public class BuyOneBookTest {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("jdbc-config.xml");
 		BookController bookController = ctx.getBean(BookController.class);
 		bookController.buyOneBook("John", 1);
+		//bookController.buyOneBook("John", 1);
 	}
 
 }

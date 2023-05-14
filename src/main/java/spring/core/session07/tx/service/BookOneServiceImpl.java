@@ -2,6 +2,8 @@ package spring.core.session07.tx.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import spring.core.session07.tx.dao.BookDao;
 
@@ -11,6 +13,9 @@ public class BookOneServiceImpl implements BookOneService {
 	@Autowired
 	private BookDao bookDao;
 	
+	@Transactional( // tx
+			propagation = Propagation.REQUIRED // 預設: 若當前有 tx, 則繼續使用; 若當前沒有 tx 就建立一個 tx
+	)
 	@Override
 	public void buyOne(String username, Integer bookId) {
 		// 1. 查詢書本價格
